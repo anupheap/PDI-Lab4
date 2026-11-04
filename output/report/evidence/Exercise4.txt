@@ -1,0 +1,4 @@
+Loaded 3 students from Ex3StudentData.csv
+Name: Zoe, Chan | ID: 001 | Gender: female
+Name: Bora "Bo" | ID: 002 | Gender: male
+Name: Ana | ID: 003 | Gender: female

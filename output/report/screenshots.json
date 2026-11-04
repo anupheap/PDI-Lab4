@@ -1,0 +1,212 @@
+[
+  {
+    "file": "output/report/screenshots/Exercise1-source-1.png",
+    "title": "Exercise 1 - Lucky numbers",
+    "description": "Generate, save, and reread 500 integers.",
+    "kind": "source",
+    "subtitle": "src/Exercise1.java | lines 1-31",
+    "part": 1,
+    "count": 1,
+    "source": "src/Exercise1.java"
+  },
+  {
+    "file": "output/report/screenshots/Exercise1-output-1.png",
+    "title": "Exercise 1 - Lucky numbers",
+    "description": "Generate, save, and reread 500 integers.",
+    "kind": "output",
+    "subtitle": "Exercise1 | successful run",
+    "part": 1,
+    "count": 1,
+    "source": "src/Exercise1.java"
+  },
+  {
+    "file": "output/report/screenshots/Exercise2-source-1.png",
+    "title": "Exercise 2 - Multiple files",
+    "description": "Read 1,500 values from three files into an ArrayList.",
+    "kind": "source",
+    "subtitle": "src/Exercise2.java | lines 1-24",
+    "part": 1,
+    "count": 2,
+    "source": "src/Exercise2.java"
+  },
+  {
+    "file": "output/report/screenshots/Exercise2-source-2.png",
+    "title": "Exercise 2 - Multiple files",
+    "description": "Read 1,500 values from three files into an ArrayList.",
+    "kind": "source",
+    "subtitle": "src/Exercise2.java | lines 25-48",
+    "part": 2,
+    "count": 2,
+    "source": "src/Exercise2.java"
+  },
+  {
+    "file": "output/report/screenshots/Exercise2-output-1.png",
+    "title": "Exercise 2 - Multiple files",
+    "description": "Read 1,500 values from three files into an ArrayList.",
+    "kind": "output",
+    "subtitle": "Exercise2 | successful run",
+    "part": 1,
+    "count": 1,
+    "source": "src/Exercise2.java"
+  },
+  {
+    "file": "output/report/screenshots/Exercise3-source-1.png",
+    "title": "Exercise 3 - Save students",
+    "description": "Enter three fictional demonstration team members.",
+    "kind": "source",
+    "subtitle": "src/Exercise3.java | lines 1-16",
+    "part": 1,
+    "count": 1,
+    "source": "src/Exercise3.java"
+  },
+  {
+    "file": "output/report/screenshots/Exercise3-output-1.png",
+    "title": "Exercise 3 - Save students",
+    "description": "Enter three fictional demonstration team members.",
+    "kind": "output",
+    "subtitle": "Exercise3 | successful run",
+    "part": 1,
+    "count": 1,
+    "source": "src/Exercise3.java"
+  },
+  {
+    "file": "output/report/screenshots/Exercise4-source-1.png",
+    "title": "Exercise 4 - Read students",
+    "description": "Reconstruct students in an ArrayList and display them.",
+    "kind": "source",
+    "subtitle": "src/Exercise4.java | lines 1-15",
+    "part": 1,
+    "count": 1,
+    "source": "src/Exercise4.java"
+  },
+  {
+    "file": "output/report/screenshots/Exercise4-output-1.png",
+    "title": "Exercise 4 - Read students",
+    "description": "Reconstruct students in an ArrayList and display them.",
+    "kind": "output",
+    "subtitle": "Exercise4 | successful run",
+    "part": 1,
+    "count": 1,
+    "source": "src/Exercise4.java"
+  },
+  {
+    "file": "output/report/screenshots/Exercise5-source-1.png",
+    "title": "Exercise 5 - Add and sort",
+    "description": "Add three demonstration students and save six names in A-Z order.",
+    "kind": "source",
+    "subtitle": "src/Exercise5.java | lines 1-25",
+    "part": 1,
+    "count": 1,
+    "source": "src/Exercise5.java"
+  },
+  {
+    "file": "output/report/screenshots/Exercise5-output-1.png",
+    "title": "Exercise 5 - Add and sort",
+    "description": "Add three demonstration students and save six names in A-Z order.",
+    "kind": "output",
+    "subtitle": "Exercise5 | successful run",
+    "part": 1,
+    "count": 1,
+    "source": "src/Exercise5.java"
+  },
+  {
+    "file": "output/report/screenshots/Exercise6-source-1.png",
+    "title": "Exercise 6 - Candidate analysis",
+    "description": "Analyze the supplied local dataset; publish aggregate output only.",
+    "kind": "source",
+    "subtitle": "src/Exercise6.java | lines 1-34",
+    "part": 1,
+    "count": 1,
+    "source": "src/Exercise6.java"
+  },
+  {
+    "file": "output/report/screenshots/Exercise6-output-1.png",
+    "title": "Exercise 6 - Candidate analysis",
+    "description": "Analyze the supplied local dataset; publish aggregate output only.",
+    "kind": "output",
+    "subtitle": "Exercise6 | successful run | part 1/2",
+    "part": 1,
+    "count": 2,
+    "source": "src/Exercise6.java"
+  },
+  {
+    "file": "output/report/screenshots/Exercise6-output-2.png",
+    "title": "Exercise 6 - Candidate analysis",
+    "description": "Analyze the supplied local dataset; publish aggregate output only.",
+    "kind": "output",
+    "subtitle": "Exercise6 | successful run | part 2/2",
+    "part": 2,
+    "count": 2,
+    "source": "src/Exercise6.java"
+  },
+  {
+    "file": "output/report/screenshots/Exercise7-source-1.png",
+    "title": "Exercise 7 - Group exports",
+    "description": "Export every group and append total and gender summaries.",
+    "kind": "source",
+    "subtitle": "src/Exercise7.java | lines 1-31",
+    "part": 1,
+    "count": 2,
+    "source": "src/Exercise7.java"
+  },
+  {
+    "file": "output/report/screenshots/Exercise7-source-2.png",
+    "title": "Exercise 7 - Group exports",
+    "description": "Export every group and append total and gender summaries.",
+    "kind": "source",
+    "subtitle": "src/Exercise7.java | lines 32-61",
+    "part": 2,
+    "count": 2,
+    "source": "src/Exercise7.java"
+  },
+  {
+    "file": "output/report/screenshots/Exercise7-output-1.png",
+    "title": "Exercise 7 - Group exports",
+    "description": "Export every group and append total and gender summaries.",
+    "kind": "output",
+    "subtitle": "Exercise7 | successful run | part 1/2",
+    "part": 1,
+    "count": 2,
+    "source": "src/Exercise7.java"
+  },
+  {
+    "file": "output/report/screenshots/Exercise7-output-2.png",
+    "title": "Exercise 7 - Group exports",
+    "description": "Export every group and append total and gender summaries.",
+    "kind": "output",
+    "subtitle": "Exercise7 | successful run | part 2/2",
+    "part": 2,
+    "count": 2,
+    "source": "src/Exercise7.java"
+  },
+  {
+    "file": "output/report/screenshots/BonusExercise-source-1.png",
+    "title": "Bonus - CSV object round trip",
+    "description": "Serialize Student objects and verify the reconstructed objects.",
+    "kind": "source",
+    "subtitle": "src/BonusExercise.java | lines 1-34",
+    "part": 1,
+    "count": 1,
+    "source": "src/BonusExercise.java"
+  },
+  {
+    "file": "output/report/screenshots/BonusExercise-output-1.png",
+    "title": "Bonus - CSV object round trip",
+    "description": "Serialize Student objects and verify the reconstructed objects.",
+    "kind": "output",
+    "subtitle": "BonusExercise | successful run",
+    "part": 1,
+    "count": 1,
+    "source": "src/BonusExercise.java"
+  },
+  {
+    "file": "output/report/screenshots/Verification-output-1.png",
+    "title": "Verification - integration checks",
+    "description": "Independent checks compare Java output with Python CSV calculations.",
+    "kind": "output",
+    "subtitle": "python tests/verify.py | all checks passed",
+    "part": 1,
+    "count": 1,
+    "source": "tests/verify.py"
+  }
+]

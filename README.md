@@ -134,3 +134,26 @@ The conversion preserves string IDs (including leading zeroes), Unicode,
 commas, quotes, and multiline fields. The handout's `.ser` hint demonstrates
 binary Java serialization; this solution implements the CSV format requested
 by the actual bonus question.
+
+## Report and recorded output
+
+The submission report is [`output/pdf/Lab4_Report.pdf`](output/pdf/Lab4_Report.pdf).
+It contains source and console screenshots for all seven exercises and the
+bonus, plus aggregate results and verification output. Screenshot images and
+the captured run text are under `output/report/`. No real candidate rows are
+included. Demonstration student details are fictional.
+
+The report can be rebuilt after compiling the Java programs and providing the
+local dataset. Report generation additionally requires Python's `reportlab`
+package, Node.js, Playwright, and Chromium (these are not Java dependencies):
+
+```powershell
+python scripts/capture_runs.py
+node scripts/capture_screenshots.cjs
+python scripts/build_report.py --date 2026-11-04
+```
+
+If Playwright or Chromium is installed outside the usual locations, set
+`PLAYWRIGHT_MODULE` to the Playwright module path and `CHROME_PATH` to the
+browser executable. `capture_runs.py` accepts `--java` for a custom Java path.
+The integration tests also accept `--java` and `--dataset`.

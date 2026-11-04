@@ -1,0 +1,4 @@
+Number of files: Files created: 3
+Numbers loaded into ArrayList: 1500
+Minimum: 1
+Maximum: 100

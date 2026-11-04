@@ -7,3 +7,5 @@
 *.class
 /W4-File IO in Java.pdf
 /data/CandidatePerformanceTest.csv
+__pycache__/
+*.pyc

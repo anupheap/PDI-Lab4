@@ -1,0 +1,122 @@
+{
+  "runs": [
+    {
+      "class": "Exercise1",
+      "title": "Exercise 1 - Lucky numbers",
+      "description": "Generate, save, and reread 500 integers.",
+      "command": "java -cp build Exercise1",
+      "stdin": "",
+      "stdout": "Saved 500 numbers to LuckyNumber.csv. Reading them back:\n 14  47  63  76  45  69  66  20  80  60  99  71  70  93  44  37   3  53  28  38\n 47  52  31  33   3  30   7  67  44   9   9  68  17   3  79  82  45  14  65  99\n 85  31  34   2  16  39  48  96   8  96  80  92  71  95  88  58  52   3  96  64\n  7   8  92  83   7   3   5   9  85  30  43  91  47  50  30  27  69   4  40  28\n  4  85  34  30  77  47  24  38  80  38  68  42  29   8  67  29  45  82  51  18\n 46  55  73  11  10  26  46  91  70  39  26  21  78  99  56   8  50  67  45   7\n 19  88  73  48  79  97  64  90  72  16 100  61  16  18  22  52  54  58  26  85\n  5  74  32  59  30  55  36  77  29  79  32  39  13  24  78  36  97  70  72  23\n 46  14  96  94   6  31  88   8  75  83  63  66  18  88  27  15  60  44  34  14\n 79  62   5  13  50  30  80  80  66  45  99  38  93  27  31   4  72  70  37  29\n 21  12  40  26  24  20  54  16  76  94  68  38  59  90  43  53  66  71  68  40\n 90  21   9  65  31  43  58   4   7  47  74  45  85  26  93   8  20  20  23  70\n 66  66   4  59  34  69  96  60  21  38  87   5  66  81   9  31  82  27  88   1\n 59  98  94  42  97  52  67  73  66  46  28   9  38  63  70  50  27   8  58  32\n 47  48  60  79  98  14  92  40  52  31  69  76  39  18  39  63  50  62  13  17\n  4  80  90  97  60   1   4  10  67  95  78  39  17   8   8  86  73  25  82   5\n 47  34  14  89 100  69  71  85   4  45  31  39  33   4  13  54  32  21  68  49\n 73  18  84  95  69  86  21   1  76  44  95  28  49  84  90  40  49  69  91   2\n 71  44  53  53  83  99  49  93  10  11  25   8  38  69  91  14  32  99   1  13\n 10  96  95  87  44  13  65  20  42  72  63  15  40  83  60  48  14  45   1  72\n  3  30   7   6  50  12  84  27  90  94  76  85   8  17  21  76  95  74  75  54\n  1  28  39  85  73  91  38  19  23  42  35  65  25  94  83  28  52  71  23  87\n 88  16 100  46  93  63   6  49  25  27  33  77  23  14  10  31   7  28  50  59\n 54  46   5  39  17  55  20  78  60  37  16  20  48   8  35  64  54  89  62  61\n 52  14  62  82  55  63  17   9   7  56  53  35  86  56  59  14  87  38  46  72\nNumbers read: 500\n",
+      "source": "src/Exercise1.java"
+    },
+    {
+      "class": "Exercise2",
+      "title": "Exercise 2 - Multiple files",
+      "description": "Read 1,500 values from three files into an ArrayList.",
+      "command": "java -cp build Exercise2",
+      "stdin": "3\n",
+      "stdout": "Number of files: Files created: 3\nNumbers loaded into ArrayList: 1500\nMinimum: 1\nMaximum: 100\n",
+      "source": "src/Exercise2.java"
+    },
+    {
+      "class": "Exercise3",
+      "title": "Exercise 3 - Save students",
+      "description": "Enter three fictional demonstration team members.",
+      "command": "java -cp build Exercise3",
+      "stdin": "Zoe, Chan\n001\nfemale\nBora \"Bo\"\n002\nmale\nAna\n003\nfemale\n",
+      "stdout": "Student 1 of 3\nName: ID: Gender: Student 2 of 3\nName: ID: Gender: Student 3 of 3\nName: ID: Gender: Saved 3 students to Ex3StudentData.csv\n",
+      "source": "src/Exercise3.java"
+    },
+    {
+      "class": "Exercise4",
+      "title": "Exercise 4 - Read students",
+      "description": "Reconstruct students in an ArrayList and display them.",
+      "command": "java -cp build Exercise4",
+      "stdin": "",
+      "stdout": "Loaded 3 students from Ex3StudentData.csv\nName: Zoe, Chan | ID: 001 | Gender: female\nName: Bora \"Bo\" | ID: 002 | Gender: male\nName: Ana | ID: 003 | Gender: female\n",
+      "source": "src/Exercise4.java"
+    },
+    {
+      "class": "Exercise5",
+      "title": "Exercise 5 - Add and sort",
+      "description": "Add three demonstration students and save six names in A-Z order.",
+      "command": "java -cp build Exercise5",
+      "stdin": "dara\n006\nmale\nChenda\n005\nfemale\nBopha\n004\nfemale\n",
+      "stdout": "Loaded 3 students from Ex3StudentData.csv\nStudent 1 of 3\nName: ID: Gender: Student 2 of 3\nName: ID: Gender: Student 3 of 3\nName: ID: Gender: Saved 6 students sorted by name (A-Z) to StudentData.csv\nName: Ana | ID: 003 | Gender: female\nName: Bopha | ID: 004 | Gender: female\nName: Bora \"Bo\" | ID: 002 | Gender: male\nName: Chenda | ID: 005 | Gender: female\nName: dara | ID: 006 | Gender: male\nName: Zoe, Chan | ID: 001 | Gender: female\n",
+      "source": "src/Exercise5.java"
+    },
+    {
+      "class": "Exercise6",
+      "title": "Exercise 6 - Candidate analysis",
+      "description": "Analyze the supplied local dataset; publish aggregate output only.",
+      "command": "java -cp build Exercise6 data/CandidatePerformanceTest.csv --summary",
+      "stdin": "",
+      "stdout": "All candidates\nTotal candidates: 958\nMale candidates: 467 (48.75%)\nFemale candidates: 491 (51.25%)\n\nAverage score >= 90\nTotal candidates: 48\nMale candidates: 14 (29.17%)\nFemale candidates: 34 (70.83%)\n\nMath score >= 85: 112\nEnglish score >= 85: 142\nComputer score >= 85: 128\nAll three subjects >= 85: 58\n\nGroup A\nTotal candidates: 81\nMale candidates: 50 (61.73%)\nFemale candidates: 31 (38.27%)\n\nGroup B\nTotal candidates: 185\nMale candidates: 84 (45.41%)\nFemale candidates: 101 (54.59%)\n\nGroup C\nTotal candidates: 308\nMale candidates: 134 (43.51%)\nFemale candidates: 174 (56.49%)\n\nGroup D\nTotal candidates: 249\nMale candidates: 130 (52.21%)\nFemale candidates: 119 (47.79%)\n\nGroup E\nTotal candidates: 135\nMale candidates: 69 (51.11%)\nFemale candidates: 66 (48.89%)\n\n",
+      "source": "src/Exercise6.java"
+    },
+    {
+      "class": "Exercise7",
+      "title": "Exercise 7 - Group exports",
+      "description": "Export every group and append total and gender summaries.",
+      "command": "java -cp build Exercise7 data/CandidatePerformanceTest.csv groups --summary",
+      "stdin": "",
+      "stdout": "Group A\nTotal candidates: 81\nMale candidates: 50 (61.73%)\nFemale candidates: 31 (38.27%)\n\nWrote groups\\groupA.csv\n\nGroup B\nTotal candidates: 185\nMale candidates: 84 (45.41%)\nFemale candidates: 101 (54.59%)\n\nWrote groups\\groupB.csv\n\nGroup C\nTotal candidates: 308\nMale candidates: 134 (43.51%)\nFemale candidates: 174 (56.49%)\n\nWrote groups\\groupC.csv\n\nGroup D\nTotal candidates: 249\nMale candidates: 130 (52.21%)\nFemale candidates: 119 (47.79%)\n\nWrote groups\\groupD.csv\n\nGroup E\nTotal candidates: 135\nMale candidates: 69 (51.11%)\nFemale candidates: 66 (48.89%)\n\nWrote groups\\groupE.csv\n\nExported 958 candidates to 5 group files.\n",
+      "source": "src/Exercise7.java"
+    },
+    {
+      "class": "BonusExercise",
+      "title": "Bonus - CSV object round trip",
+      "description": "Serialize Student objects and verify the reconstructed objects.",
+      "command": "java -cp build BonusExercise",
+      "stdin": "",
+      "stdout": "Serialized 6 Student objects to BonusStudents.csv\nDeserialized 6 Student objects:\nName: Ana | ID: 003 | Gender: female\nName: Bopha | ID: 004 | Gender: female\nName: Bora \"Bo\" | ID: 002 | Gender: male\nName: Chenda | ID: 005 | Gender: female\nName: dara | ID: 006 | Gender: male\nName: Zoe, Chan | ID: 001 | Gender: female\nRound-trip verified: every restored object equals its original.\n",
+      "source": "src/BonusExercise.java"
+    }
+  ],
+  "verification": "PASS Exercise 1: 500 saved numbers match the displayed file contents\nPASS Exercise 2: file counts, input validation, stale files, and exact extrema\nPASS Exercise 3: three students, required input, CSV escaping, and leading-zero IDs\nPASS Exercise 4: ArrayList display, file-name fallback, BOM, and multiline fields\nPASS Exercise 5: append exactly three, sort, save, and reread six students\nPASS original local dataset: 958 candidates (not published)\nPASS Exercise 6: threshold boundaries, groups, display, and empty populations\nPASS Exercise 7: all groups, lossless partition, rectangular CSV, footer statistics, empty groups\nPASS Bonus: object round trips preserve escaped fields, multiline names, and text IDs\n",
+  "summary": [
+    {
+      "label": "All candidates",
+      "total": 958,
+      "male": 467,
+      "female": 491
+    },
+    {
+      "label": "Average >= 90",
+      "total": 48,
+      "male": 14,
+      "female": 34
+    },
+    {
+      "label": "Group A",
+      "total": 81,
+      "male": 50,
+      "female": 31
+    },
+    {
+      "label": "Group B",
+      "total": 185,
+      "male": 84,
+      "female": 101
+    },
+    {
+      "label": "Group C",
+      "total": 308,
+      "male": 134,
+      "female": 174
+    },
+    {
+      "label": "Group D",
+      "total": 249,
+      "male": 130,
+      "female": 119
+    },
+    {
+      "label": "Group E",
+      "total": 135,
+      "male": 69,
+      "female": 66
+    }
+  ],
+  "source_revision": "a8770592436ea6ffb749f845d3ae5e993012230f"
+}

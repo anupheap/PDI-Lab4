@@ -1,0 +1,4 @@
+Student 1 of 3
+Name: ID: Gender: Student 2 of 3
+Name: ID: Gender: Student 3 of 3
+Name: ID: Gender: Saved 3 students to Ex3StudentData.csv

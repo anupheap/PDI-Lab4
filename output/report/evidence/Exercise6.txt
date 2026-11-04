@@ -1,0 +1,39 @@
+All candidates
+Total candidates: 958
+Male candidates: 467 (48.75%)
+Female candidates: 491 (51.25%)
+
+Average score >= 90
+Total candidates: 48
+Male candidates: 14 (29.17%)
+Female candidates: 34 (70.83%)
+
+Math score >= 85: 112
+English score >= 85: 142
+Computer score >= 85: 128
+All three subjects >= 85: 58
+
+Group A
+Total candidates: 81
+Male candidates: 50 (61.73%)
+Female candidates: 31 (38.27%)
+
+Group B
+Total candidates: 185
+Male candidates: 84 (45.41%)
+Female candidates: 101 (54.59%)
+
+Group C
+Total candidates: 308
+Male candidates: 134 (43.51%)
+Female candidates: 174 (56.49%)
+
+Group D
+Total candidates: 249
+Male candidates: 130 (52.21%)
+Female candidates: 119 (47.79%)
+
+Group E
+Total candidates: 135
+Male candidates: 69 (51.11%)
+Female candidates: 66 (48.89%)

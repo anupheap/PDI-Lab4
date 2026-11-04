@@ -1,0 +1,9 @@
+Serialized 6 Student objects to BonusStudents.csv
+Deserialized 6 Student objects:
+Name: Ana | ID: 003 | Gender: female
+Name: Bopha | ID: 004 | Gender: female
+Name: Bora "Bo" | ID: 002 | Gender: male
+Name: Chenda | ID: 005 | Gender: female
+Name: dara | ID: 006 | Gender: male
+Name: Zoe, Chan | ID: 001 | Gender: female
+Round-trip verified: every restored object equals its original.

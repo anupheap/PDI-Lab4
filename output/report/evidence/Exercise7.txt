@@ -1,0 +1,36 @@
+Group A
+Total candidates: 81
+Male candidates: 50 (61.73%)
+Female candidates: 31 (38.27%)
+
+Wrote groups\groupA.csv
+
+Group B
+Total candidates: 185
+Male candidates: 84 (45.41%)
+Female candidates: 101 (54.59%)
+
+Wrote groups\groupB.csv
+
+Group C
+Total candidates: 308
+Male candidates: 134 (43.51%)
+Female candidates: 174 (56.49%)
+
+Wrote groups\groupC.csv
+
+Group D
+Total candidates: 249
+Male candidates: 130 (52.21%)
+Female candidates: 119 (47.79%)
+
+Wrote groups\groupD.csv
+
+Group E
+Total candidates: 135
+Male candidates: 69 (51.11%)
+Female candidates: 66 (48.89%)
+
+Wrote groups\groupE.csv
+
+Exported 958 candidates to 5 group files.

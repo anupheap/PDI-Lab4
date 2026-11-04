@@ -1,0 +1,9 @@
+PASS Exercise 1: 500 saved numbers match the displayed file contents
+PASS Exercise 2: file counts, input validation, stale files, and exact extrema
+PASS Exercise 3: three students, required input, CSV escaping, and leading-zero IDs
+PASS Exercise 4: ArrayList display, file-name fallback, BOM, and multiline fields
+PASS Exercise 5: append exactly three, sort, save, and reread six students
+PASS original local dataset: 958 candidates (not published)
+PASS Exercise 6: threshold boundaries, groups, display, and empty populations
+PASS Exercise 7: all groups, lossless partition, rectangular CSV, footer statistics, empty groups
+PASS Bonus: object round trips preserve escaped fields, multiline names, and text IDs

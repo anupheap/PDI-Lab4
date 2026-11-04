@@ -23,7 +23,8 @@ def run(name, cwd, stdin="", *arguments):
     return result.stdout
 
 
-with tempfile.TemporaryDirectory(prefix="pdi-lab4-") as directory:
+(ROOT / "tmp").mkdir(exist_ok=True)
+with tempfile.TemporaryDirectory(prefix="pdi-lab4-", dir=ROOT / "tmp") as directory:
     work = pathlib.Path(directory)
     output = run("Exercise1", work)
     with (work / "LuckyNumber.csv").open(encoding="utf-8", newline="") as stream:
@@ -32,3 +33,17 @@ with tempfile.TemporaryDirectory(prefix="pdi-lab4-") as directory:
     displayed = re.findall(r"\d+", output.split("Reading them back:\n")[1].split("Numbers read:")[0])
     assert list(map(int, displayed)) == numbers
     print("PASS Exercise 1: 500 saved numbers match the displayed file contents")
+
+    (work / "Ex2LuckyNumber").mkdir()
+    (work / "Ex2LuckyNumber" / "file99.csv").write_text("-999\n", encoding="utf-8")
+    output = run("Exercise2", work, "no\n0\n3\n")
+    numbers = []
+    for i in range(1, 4):
+        rows = list(csv.reader((work / "Ex2LuckyNumber" / f"file{i}.csv").open()))
+        assert len(rows) == 500
+        numbers.extend(int(row[0]) for row in rows)
+    assert len(numbers) == 1500 and all(1 <= n <= 100 for n in numbers)
+    assert "Numbers loaded into ArrayList: 1500" in output
+    assert f"Minimum: {min(numbers)}" in output and f"Maximum: {max(numbers)}" in output
+    assert output.count("Please enter a positive integer.") == 2
+    print("PASS Exercise 2: file counts, input validation, stale files, and exact extrema")

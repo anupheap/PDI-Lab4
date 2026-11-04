@@ -139,3 +139,30 @@ with tempfile.TemporaryDirectory(prefix="pdi-lab4-", dir=ROOT / "tmp") as direct
     assert "NaN" not in check_analysis(empty, [])
     assert "college, test" in run("Exercise6", work, "", str(boundary))
     print("PASS Exercise 6: threshold boundaries, groups, display, and empty populations")
+
+    def check_exports(file, source, label):
+        folder = work / label
+        output = run("Exercise7", work, "", str(file), str(folder), "--summary")
+        expected_groups = {"A", "B", "C", "D"} | {row[2].split()[-1] for row in source}
+        assert {p.name for p in folder.glob("*.csv")} == {f"group{g}.csv" for g in expected_groups}
+        exported = []
+        for group in expected_groups:
+            with (folder / f"group{group}.csv").open(encoding="utf-8", newline="") as stream:
+                rows = list(csv.reader(stream))
+            members = [row for row in source if row[2] == f"group {group}"]
+            assert len(rows[0]) == 10 and all(len(row) == 10 for row in rows)
+            assert rows[1:-3] == members
+            assert rows[-3][:2] == ["Summary - total students", str(len(members))]
+            for index, gender in [(-2, "male"), (-1, "female")]:
+                count = sum(row[1] == gender for row in members)
+                percent = 100 * count / len(members) if members else 0
+                assert rows[index][:2] == [f"Summary - {gender} (%)", f"{percent:.2f}%"]
+            exported.extend(rows[1:-3])
+        assert collections.Counter(map(tuple, exported)) == collections.Counter(map(tuple, source))
+        assert f"Exported {len(source)} candidates to {len(expected_groups)} group files." in output
+
+    check_exports(boundary, fixture, "fixture-groups")
+    check_exports(empty, [], "empty-groups")
+    if dataset.exists():
+        check_exports(dataset, candidates, "original-groups")
+    print("PASS Exercise 7: all groups, lossless partition, rectangular CSV, footer statistics, empty groups")

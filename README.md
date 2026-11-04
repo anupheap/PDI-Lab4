@@ -102,3 +102,20 @@ the qualifying candidates, or one group), with two decimal places. Empty
 populations give 0.00%. The file's `Average` column supplies the average score.
 The title row is skipped, quoted multiline fields are supported, and malformed
 records are rejected with their CSV record number instead of silently skipped.
+
+## Exercise 7
+
+```powershell
+java -cp build Exercise7
+# Optional input, output directory, and concise display:
+java -cp build Exercise7 data/CandidatePerformanceTest.csv groups --summary
+```
+
+Reads and displays the candidate data, prints each group's gender statistics,
+and creates `groups/groupA.csv` through `groupD.csv`. Because the supplied
+dataset also has 135 candidates in group E, it creates `groupE.csv` as well.
+Every candidate is retained with all original columns. Each CSV ends with
+three labeled summary rows: total students, male percentage, and female
+percentage. Summary rows have the same column count as the data rows.
+Required groups A-D are exported even when empty, with 0.00% percentages.
+The output directory is excluded from Git to keep individual records local.

@@ -66,3 +66,16 @@ Reads students into an `ArrayList<Student>` and displays them. The handout
 calls exercise 3's file both `Ex3StudentData.csv` and `StudentData.csv`.
 To make the exercises work in sequence, exercise 4 reads `StudentData.csv`
 when it exists, otherwise `Ex3StudentData.csv`. An explicit path overrides this.
+
+## Exercise 5
+
+```powershell
+java -cp build Exercise5
+# Optional input and output paths:
+java -cp build Exercise5 Ex3StudentData.csv StudentData.csv
+```
+
+Loads the existing students using the same filename fallback as exercise 4,
+prompts for three more students, sorts by name A-Z ignoring case, then saves
+`StudentData.csv` and displays the sorted list. The first default run has six
+students. Later runs append three to the current `StudentData.csv`.

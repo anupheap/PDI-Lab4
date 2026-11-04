@@ -66,3 +66,14 @@ with tempfile.TemporaryDirectory(prefix="pdi-lab4-", dir=ROOT / "tmp") as direct
         csv.writer(stream).writerows([["name", "ID", "gender"], ["Line\nBreak", "004", "female"]])
     assert "Name: Line\nBreak | ID: 004" in run("Exercise4", work, "", str(multiline))
     print("PASS Exercise 4: ArrayList display, file-name fallback, BOM, and multiline fields")
+
+    added = [["dara", "006", "male"], ["Chenda", "005", "female"], ["Bopha", "004", "female"]]
+    output = run("Exercise5", work, "\n".join(v for row in added for v in row) + "\n")
+    with (work / "StudentData.csv").open(encoding="utf-8", newline="") as stream:
+        rows = list(csv.reader(stream))
+    expected = sorted(students + added, key=lambda row: (row[0].lower(), row[0], row[1]))
+    assert rows == [["name", "ID", "gender"], *expected]
+    assert "Saved 6 students sorted by name (A-Z) to StudentData.csv" in output
+    assert "Loaded 6 students from StudentData.csv" in run("Exercise4", work)
+    assert len(list(csv.reader((work / "Ex3StudentData.csv").open()))) == 4
+    print("PASS Exercise 5: append exactly three, sort, save, and reread six students")

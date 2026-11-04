@@ -47,3 +47,12 @@ with tempfile.TemporaryDirectory(prefix="pdi-lab4-", dir=ROOT / "tmp") as direct
     assert f"Minimum: {min(numbers)}" in output and f"Maximum: {max(numbers)}" in output
     assert output.count("Please enter a positive integer.") == 2
     print("PASS Exercise 2: file counts, input validation, stale files, and exact extrema")
+
+    students = [["Zoe, Chan", "001", "female"], ["Bora \"Bo\"", "002", "male"],
+                ["Ana", "003", "female"]]
+    output = run("Exercise3", work, "\n" + "\n".join(v for row in students for v in row) + "\n")
+    with (work / "Ex3StudentData.csv").open(encoding="utf-8", newline="") as stream:
+        rows = list(csv.reader(stream))
+    assert rows == [["name", "ID", "gender"], *students]
+    assert "Saved 3 students to Ex3StudentData.csv" in output
+    print("PASS Exercise 3: three students, required input, CSV escaping, and leading-zero IDs")

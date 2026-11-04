@@ -41,3 +41,15 @@ affect the result.
 
 After compilation, run `python tests/verify.py`. The tests use temporary
 working folders under `tmp/` and do not replace your exercise output files.
+
+## Exercise 3
+
+```powershell
+java -cp build Exercise3
+```
+
+Enter the name, ID, and gender of each of three team members when prompted.
+The program writes `Ex3StudentData.csv` with a header. IDs remain text so
+leading zeroes are preserved. CSV fields containing commas or quotes are
+escaped correctly. The report uses clearly labeled fictional demonstration
+students; enter your actual team members when running the program.

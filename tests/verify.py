@@ -56,3 +56,13 @@ with tempfile.TemporaryDirectory(prefix="pdi-lab4-", dir=ROOT / "tmp") as direct
     assert rows == [["name", "ID", "gender"], *students]
     assert "Saved 3 students to Ex3StudentData.csv" in output
     print("PASS Exercise 3: three students, required input, CSV escaping, and leading-zero IDs")
+
+    output = run("Exercise4", work)
+    assert "Loaded 3 students from Ex3StudentData.csv" in output
+    for name, student_id, gender in students:
+        assert f"Name: {name} | ID: {student_id} | Gender: {gender}" in output
+    multiline = work / "multiline.csv"
+    with multiline.open("w", encoding="utf-8-sig", newline="") as stream:
+        csv.writer(stream).writerows([["name", "ID", "gender"], ["Line\nBreak", "004", "female"]])
+    assert "Name: Line\nBreak | ID: 004" in run("Exercise4", work, "", str(multiline))
+    print("PASS Exercise 4: ArrayList display, file-name fallback, BOM, and multiline fields")

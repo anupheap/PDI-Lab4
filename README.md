@@ -53,3 +53,16 @@ The program writes `Ex3StudentData.csv` with a header. IDs remain text so
 leading zeroes are preserved. CSV fields containing commas or quotes are
 escaped correctly. The report uses clearly labeled fictional demonstration
 students; enter your actual team members when running the program.
+
+## Exercise 4
+
+```powershell
+java -cp build Exercise4
+# Or specify a CSV explicitly:
+java -cp build Exercise4 Ex3StudentData.csv
+```
+
+Reads students into an `ArrayList<Student>` and displays them. The handout
+calls exercise 3's file both `Ex3StudentData.csv` and `StudentData.csv`.
+To make the exercises work in sequence, exercise 4 reads `StudentData.csv`
+when it exists, otherwise `Ex3StudentData.csv`. An explicit path overrides this.

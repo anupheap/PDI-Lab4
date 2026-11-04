@@ -79,3 +79,26 @@ Loads the existing students using the same filename fallback as exercise 4,
 prompts for three more students, sorts by name A-Z ignoring case, then saves
 `StudentData.csv` and displays the sorted list. The first default run has six
 students. Later runs append three to the current `StudentData.csv`.
+
+## Exercise 6
+
+```powershell
+java -cp build Exercise6
+# Summary only, or an explicit input path:
+java -cp build Exercise6 --summary
+java -cp build Exercise6 data/CandidatePerformanceTest.csv --summary
+```
+
+Place the original CSV at `data/CandidatePerformanceTest.csv`, or provide its
+path on the command line. The supplied dataset stays local and is excluded
+from Git because it contains candidate records. The program reads
+and displays the candidate records, then reports total candidates and gender
+percentages; the count and gender breakdown for average scores **at least
+90**; counts for scores **at least 85** in each subject and in all three
+subjects together; and a count and gender breakdown for every group.
+
+Percentages use the population of the section being displayed (all candidates,
+the qualifying candidates, or one group), with two decimal places. Empty
+populations give 0.00%. The file's `Average` column supplies the average score.
+The title row is skipped, quoted multiline fields are supported, and malformed
+records are rejected with their CSV record number instead of silently skipped.

@@ -1,6 +1,7 @@
 """Integration checks. Compile src/*.java first; run with Python 3.10+."""
 import argparse
 import csv
+import collections
 import pathlib
 import re
 import subprocess
@@ -9,6 +10,7 @@ import tempfile
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
 parser.add_argument("--java", default="java")
+parser.add_argument("--dataset", type=pathlib.Path, default=ROOT / "data" / "CandidatePerformanceTest.csv")
 args = parser.parse_args()
 
 
@@ -77,3 +79,63 @@ with tempfile.TemporaryDirectory(prefix="pdi-lab4-", dir=ROOT / "tmp") as direct
     assert "Loaded 6 students from StudentData.csv" in run("Exercise4", work)
     assert len(list(csv.reader((work / "Ex3StudentData.csv").open()))) == 4
     print("PASS Exercise 5: append exactly three, sort, save, and reread six students")
+
+    def summary(title, rows):
+        male = sum(row[1].lower() == "male" for row in rows)
+        female = len(rows) - male
+        percent = lambda n: 100 * n / len(rows) if rows else 0
+        return (f"{title}\nTotal candidates: {len(rows)}\n"
+                f"Male candidates: {male} ({percent(male):.2f}%)\n"
+                f"Female candidates: {female} ({percent(female):.2f}%)")
+
+    def check_analysis(file, candidates):
+        output = run("Exercise6", work, "", str(file), "--summary")
+        assert summary("All candidates", candidates) in output
+        qualified = [row for row in candidates if float(row[9]) >= 90]
+        assert summary("Average score >= 90", qualified) in output
+        for column, name in [(5, "Math"), (6, "English"), (7, "Computer")]:
+            count = sum(float(row[column]) >= 85 for row in candidates)
+            assert f"{name} score >= 85: {count}\n" in output
+        count = sum(all(float(row[i]) >= 85 for i in (5, 6, 7)) for row in candidates)
+        assert f"All three subjects >= 85: {count}\n" in output
+        groups = collections.defaultdict(list)
+        for row in candidates:
+            groups[row[2]].append(row)
+        for group, members in groups.items():
+            assert summary(group.title(), members) in output
+        return output
+
+    header = ["ID", "gender", "group", "Education", "test preparation\ncourse",
+              "Math", "English", "Computer", "Total", "Average"]
+    title = ["List of candidates with the test scores", *([""] * 9)]
+    dataset = args.dataset.resolve()
+    if dataset.exists():
+        with dataset.open(encoding="utf-8-sig", newline="") as stream:
+            original = list(csv.reader(stream))
+        index = next(i for i, row in enumerate(original) if row and row[0] == "ID")
+        candidates = [row for row in original[index + 1:] if any(row)]
+        check_analysis(dataset, candidates)
+        print(f"PASS original local dataset: {len(candidates)} candidates (not published)")
+    else:
+        print("SKIP original dataset: local CSV not provided; fictional fixture checks still run")
+
+    boundary = work / "boundaries.csv"
+    fixture = []
+    for i, (gender, group, scores, average) in enumerate([
+            ("male", "A", (90, 90, 90), "90"),
+            ("female", "A", (89, 90, 90), "89.67"),
+            ("female", "B", (85, 85, 85), "85"),
+            ("male", "E", (100, 100, 100), "100"),
+            ("female", "D", (84, 85, 86), "85"),
+            ("male", "C", (0, 0, 0), "0")], 1):
+        fixture.append([str(i), gender, f"group {group}", "college, test", 'a "quote"',
+                        *map(str, scores), str(sum(scores)), average])
+    with boundary.open("w", encoding="utf-8-sig", newline="") as stream:
+        csv.writer(stream).writerows([title, header, *fixture])
+    check_analysis(boundary, fixture)
+    empty = work / "empty.csv"
+    with empty.open("w", encoding="utf-8", newline="") as stream:
+        csv.writer(stream).writerow(header)
+    assert "NaN" not in check_analysis(empty, [])
+    assert "college, test" in run("Exercise6", work, "", str(boundary))
+    print("PASS Exercise 6: threshold boundaries, groups, display, and empty populations")

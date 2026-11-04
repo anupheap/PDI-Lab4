@@ -1,0 +1,8 @@
+/.tools/
+/build/
+/tmp/
+/*.csv
+/Ex2LuckyNumber/
+/groups/
+*.class
+/W4-File IO in Java.pdf

@@ -47,7 +47,7 @@ dataset when it is available locally. The script accepts `--java` and `--dataset
 
 [Lab report](output/pdf/Lab4_Report.pdf) uses plain portrait pages, black
 headings, pseudocode, flowcharts, CodeSnap RS images, and text output.
-Demonstration students are fictional. Student identity fields are left blank.
+Demonstration students are fictional. Student details match the supplied reference report.
 
 Install the Windows VSIX from
 [anupheap/codesnap-rs-vscode](https://github.com/anupheap/codesnap-rs-vscode).

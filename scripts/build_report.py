@@ -15,9 +15,9 @@ from reportlab.platypus import (
 
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
-parser.add_argument("--student-name", default="")
-parser.add_argument("--student-id", default="")
-parser.add_argument("--class-group", default="")
+parser.add_argument("--student-name", default="Buntong Anupheap")
+parser.add_argument("--student-id", default="P20250055")
+parser.add_argument("--class-group", default="I2-Group A (AIECS)")
 options = parser.parse_args()
 evidence = json.loads((ROOT / "output/report/evidence/runs.json").read_text(encoding="utf-8"))
 destination = ROOT / "output/pdf/Lab4_Report.pdf"

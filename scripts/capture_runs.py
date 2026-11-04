@@ -1,7 +1,7 @@
-"""Capture genuine program runs for the lab report without publishing candidate rows."""
 import argparse
 import collections
 import csv
+import hashlib
 import json
 import pathlib
 import subprocess
@@ -43,8 +43,6 @@ with tempfile.TemporaryDirectory(dir=ROOT / "tmp", prefix="report-") as director
                         "command": " ".join(["java -cp build", name, *shown_arguments]),
                         "stdin": stdin, "stdout": result.stdout,
                         "source": f"src/{name}.java"})
-        (evidence / f"{name}.txt").write_text(result.stdout.rstrip("\n") + "\n",
-                                             encoding="utf-8", newline="\n")
 
     capture("Exercise1")
     capture("Exercise2", "3\n")
@@ -61,8 +59,6 @@ verification = subprocess.run(
     ["python", str(ROOT / "tests" / "verify.py"), "--java", options.java],
     cwd=ROOT, text=True, encoding="utf-8", capture_output=True, check=True, timeout=60,
 )
-(evidence / "verification.txt").write_text(verification.stdout.rstrip("\n") + "\n",
-                                          encoding="utf-8", newline="\n")
 with dataset.open(encoding="utf-8-sig", newline="") as stream:
     rows = list(csv.reader(stream))
 header_index = next(i for i, row in enumerate(rows) if row and row[0] == "ID")
@@ -81,8 +77,8 @@ payload = {"runs": records, "verification": verification.stdout,
            "summary": [aggregate("All candidates", candidates),
                        aggregate("Average >= 90", [row for row in candidates if float(row[9]) >= 90]),
                        *[aggregate(group.title(), members) for group, members in sorted(groups.items())]],
-           "source_revision": subprocess.check_output(
-               ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()}
+           "source_sha256": {str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
+                             for path in sorted((ROOT / "src").glob("*.java"))}}
 (evidence / "runs.json").write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
                                     encoding="utf-8", newline="\n")
 print(f"Captured {len(records)} successful runs and full verification; no candidate records published.")

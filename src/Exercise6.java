@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
 
-/** Displays the candidate CSV and answers all four analysis questions. */
 public class Exercise6 {
     public static void main(String[] args) throws IOException {
         Path file = args.length > 0 && !args[0].equals("--summary")

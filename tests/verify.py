@@ -1,4 +1,3 @@
-"""Integration checks. Compile src/*.java first; run with Python 3.10+."""
 import argparse
 import csv
 import collections

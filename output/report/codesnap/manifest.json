@@ -1,0 +1,81 @@
+{
+  "extension": "local-tools.codesnap-rs-local@0.3.0",
+  "repository": "https://github.com/anupheap/codesnap-rs-vscode.git",
+  "images": [
+    {
+      "source": "src/BonusExercise.java",
+      "image": "output/report/codesnap/BonusExercise.png",
+      "source_sha256": "cb2ee59dc275fa42ebce6f6a611614826d1deb7c056949c57f46cfa181034cb4"
+    },
+    {
+      "source": "src/Candidate.java",
+      "image": "output/report/codesnap/Candidate.png",
+      "source_sha256": "550ab26e85e4588a71b9d5e229e792fcffade29642038b7f604e8894ceee5a77"
+    },
+    {
+      "source": "src/CandidateData.java",
+      "image": "output/report/codesnap/CandidateData.png",
+      "source_sha256": "1357a13f459f65b21e6374f666356aa02fc2e48cf59d0bd096e53b7628f69670"
+    },
+    {
+      "source": "src/CandidateStatistics.java",
+      "image": "output/report/codesnap/CandidateStatistics.png",
+      "source_sha256": "f9b4172704ce302f94af4fe8849520a990edbd40a125f8bfe9ccd16e3d627c2d"
+    },
+    {
+      "source": "src/ConsoleInput.java",
+      "image": "output/report/codesnap/ConsoleInput.png",
+      "source_sha256": "84ac37676b2c84e0647c1872d258b534bb4e9e9195e3fc3d34b369da85cc0ebe"
+    },
+    {
+      "source": "src/Csv.java",
+      "image": "output/report/codesnap/Csv.png",
+      "source_sha256": "dafa74cdbee2bbe9658a401189bb3070a8cb3386f09d3e13cec8d17fff145ed8"
+    },
+    {
+      "source": "src/Exercise1.java",
+      "image": "output/report/codesnap/Exercise1.png",
+      "source_sha256": "d1919458e2f45d35c91e4f5039284a785cb4b3a0507483ff6db17c02b84150b2"
+    },
+    {
+      "source": "src/Exercise2.java",
+      "image": "output/report/codesnap/Exercise2.png",
+      "source_sha256": "3bb89d47a323f90063fef53c38016f4ea62952c7b25155404efbc0d6386b20f8"
+    },
+    {
+      "source": "src/Exercise3.java",
+      "image": "output/report/codesnap/Exercise3.png",
+      "source_sha256": "f3246d203fcdeda2850caf201a2570a9f1a18f133ee8226318f3b8df4e021a7c"
+    },
+    {
+      "source": "src/Exercise4.java",
+      "image": "output/report/codesnap/Exercise4.png",
+      "source_sha256": "d131ac261a22311cd32f5d70963033e76fe4060c1a4c69e668a48df4a63af632"
+    },
+    {
+      "source": "src/Exercise5.java",
+      "image": "output/report/codesnap/Exercise5.png",
+      "source_sha256": "ade703449024ebed638fc72e2a357e8495b21ea70c989e52c5d88dadea057ce3"
+    },
+    {
+      "source": "src/Exercise6.java",
+      "image": "output/report/codesnap/Exercise6.png",
+      "source_sha256": "3133bf8a4c6f8bb5ac6d0ba3b674b797485a4bd2c2f3f35547959eedc52f597b"
+    },
+    {
+      "source": "src/Exercise7.java",
+      "image": "output/report/codesnap/Exercise7.png",
+      "source_sha256": "618283c4c1b3be24b3509462f3a8fdbf14230630b6f644eac2f58deff61ee0c7"
+    },
+    {
+      "source": "src/Student.java",
+      "image": "output/report/codesnap/Student.png",
+      "source_sha256": "47de02af1923a405b620ac892814abdfd6b15259c38debf2edb89a3b9ceba564"
+    },
+    {
+      "source": "src/StudentData.java",
+      "image": "output/report/codesnap/StudentData.png",
+      "source_sha256": "33d2d6918da399765b16bb05bab9ffad9f1d4ed32546fca0f51c46247bd5b172"
+    }
+  ]
+}

@@ -9,7 +9,6 @@ import java.util.Collections;
 import java.util.Random;
 import java.util.Scanner;
 
-/** Creates n CSV files and finds extrema from the numbers read into an ArrayList. */
 public class Exercise2 {
     private static final int NUMBERS_PER_FILE = 500;
 
@@ -30,7 +29,6 @@ public class Exercise2 {
         }
 
         ArrayList<Integer> numbers = new ArrayList<>();
-        // Read exactly the n files created by this run, ignoring older extra files.
         for (int i = 1; i <= n; i++) {
             Path file = folder.resolve("file" + i + ".csv");
             try (BufferedReader reader = Files.newBufferedReader(file, StandardCharsets.UTF_8)) {

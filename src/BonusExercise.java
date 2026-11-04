@@ -3,15 +3,12 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Serializes Student objects as CSV, then reconstructs and checks those objects. */
 public class BonusExercise {
     public static void serialize(List<Student> students, Path file) throws IOException {
-        // Converts object fields to CSV strings, with escaping handled by Csv.write.
         StudentData.write(file, students);
     }
 
     public static ArrayList<Student> deserialize(Path file) throws IOException {
-        // Parses CSV strings and constructs new Student instances, preserving text IDs.
         return StudentData.read(file);
     }
 

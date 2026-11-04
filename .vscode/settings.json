@@ -1,0 +1,10 @@
+{
+  "codesnap-rs.scaleFactor": 2,
+  "codesnap-rs.theme": "candy",
+  "codesnap.backgroundColor": "#abb8c3",
+  "codesnap.showLineNumbers": true,
+  "codesnap.realLineNumbers": true,
+  "codesnap.showWindowControls": true,
+  "codesnap.showWindowTitle": true,
+  "codesnap.transparentBackground": false
+}

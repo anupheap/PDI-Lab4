@@ -6,7 +6,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Random;
 
-/** Writes 500 random integers to CSV, then displays the values read from disk. */
 public class Exercise1 {
     public static void main(String[] args) throws IOException {
         Path file = Path.of("LuckyNumber.csv");

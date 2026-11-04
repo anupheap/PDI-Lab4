@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-/** Reads the supplied candidate CSV, including its title and multiline header. */
 public record CandidateData(List<String> header, ArrayList<Candidate> candidates) {
     public static final Path DEFAULT_FILE = Path.of("data", "CandidatePerformanceTest.csv");
     private static final List<String> REQUIRED =
@@ -16,7 +15,6 @@ public record CandidateData(List<String> header, ArrayList<Candidate> candidates
         ArrayList<List<String>> rows = Csv.read(file);
         Map<String, Integer> columns = new HashMap<>();
         int headerIndex = -1;
-        // The supplied file has a descriptive title before its actual header.
         for (int i = 0; i < rows.size(); i++) {
             columns.clear();
             List<String> row = rows.get(i);

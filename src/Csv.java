@@ -7,7 +7,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/** UTF-8 CSV with escaped quotes, commas, multiline fields, CRLF, and BOM support. */
 public final class Csv {
     private Csv() { }
 

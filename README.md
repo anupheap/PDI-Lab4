@@ -1,159 +1,69 @@
 # PDI Lab 4 - File I/O in Java
 
-Solutions to the seven exercises and bonus in the supplied lab handout.
-Each exercise is completed in its own commit, in assignment order.
+Seven exercises and the bonus, completed in separate commits.
+Source files, scripts, tests, and code examples contain no comments or docstrings.
 
-## Requirements and compilation
+## Build and run
 
 Use JDK 17 or newer. No external Java libraries are required.
-Run commands from the repository root:
 
 ```powershell
 New-Item -ItemType Directory -Force build | Out-Null
 javac -encoding UTF-8 -d build src/*.java
 ```
 
-## Exercise 1
+| Exercise | Command | Result |
+| --- | --- | --- |
+| 1 | `java -cp build Exercise1` | Save and display 500 random numbers in `LuckyNumber.csv`. |
+| 2 | `java -cp build Exercise2` | Create n files in `Ex2LuckyNumber`, then find minimum and maximum. |
+| 3 | `java -cp build Exercise3` | Enter three students and save `Ex3StudentData.csv`. |
+| 4 | `java -cp build Exercise4` | Read students into an ArrayList and display them. |
+| 5 | `java -cp build Exercise5` | Add three students, sort by name, and save `StudentData.csv`. |
+| 6 | `java -cp build Exercise6 --summary` | Analyze candidate totals, gender, scores, and groups. |
+| 7 | `java -cp build Exercise7 --summary` | Export group CSVs with total and gender summaries. |
+| Bonus | `java -cp build BonusExercise` | Serialize and deserialize Student objects as CSV. |
+
+Exercises 1 and 2 use random integers from 1 through 100. Exercise 2 writes
+500 values per file. Exercises 4 and 5 use `StudentData.csv` when present,
+otherwise `Ex3StudentData.csv`. Student IDs remain text; CSV supports commas,
+escaped quotes, multiline fields, and UTF-8.
+
+Place the supplied candidate dataset at `data/CandidatePerformanceTest.csv`.
+It stays local and is excluded from Git. Exercises 6 and 7 display records when
+`--summary` is omitted. Percentages use each displayed population as the
+denominator. Exercise 7 also exports group E, preserving all 958 candidates;
+generated group files stay under the ignored `groups/` directory.
+
+## Verify
 
 ```powershell
-java -cp build Exercise1
+python tests/verify.py
 ```
 
-Generates exactly 500 random integers, writes `LuckyNumber.csv`, then reads
-the file back and displays every number. Since this exercise does not specify
-a range, it uses 1 through 100, inclusive, consistent with exercise 2.
-Generated files are UTF-8 and are excluded from version control.
+The checks always run with fictional data and additionally verify the original
+dataset when it is available locally. The script accepts `--java` and `--dataset`.
 
-## Exercise 2
+## Report
 
-```powershell
-java -cp build Exercise2
-```
+[Lab report](output/pdf/Lab4_Report.pdf) uses plain portrait pages, black
+headings, pseudocode, flowcharts, CodeSnap RS images, and text output.
+Demonstration students are fictional. Student identity fields are left blank.
 
-Prompts for a positive file count `n`, creates `Ex2LuckyNumber/file1.csv`
-through `filen.csv`, reads their numbers into an `ArrayList<Integer>`, and
-prints the minimum and maximum. The handout does not specify the number of
-values per file; this solution uses 500 per file, each from 1 through 100.
-Only files created by the current run are read, so older extra files do not
-affect the result.
+Install the Windows VSIX from
+[anupheap/codesnap-rs-vscode](https://github.com/anupheap/codesnap-rs-vscode).
+The report images use the renderer from that installed VS Code adapter.
+The workspace settings enable filenames and source line numbers.
 
-## Verification
-
-After compilation, run `python tests/verify.py`. The tests use temporary
-working folders under `tmp/` and do not replace your exercise output files.
-
-## Exercise 3
-
-```powershell
-java -cp build Exercise3
-```
-
-Enter the name, ID, and gender of each of three team members when prompted.
-The program writes `Ex3StudentData.csv` with a header. IDs remain text so
-leading zeroes are preserved. CSV fields containing commas or quotes are
-escaped correctly. The report uses clearly labeled fictional demonstration
-students; enter your actual team members when running the program.
-
-## Exercise 4
-
-```powershell
-java -cp build Exercise4
-# Or specify a CSV explicitly:
-java -cp build Exercise4 Ex3StudentData.csv
-```
-
-Reads students into an `ArrayList<Student>` and displays them. The handout
-calls exercise 3's file both `Ex3StudentData.csv` and `StudentData.csv`.
-To make the exercises work in sequence, exercise 4 reads `StudentData.csv`
-when it exists, otherwise `Ex3StudentData.csv`. An explicit path overrides this.
-
-## Exercise 5
-
-```powershell
-java -cp build Exercise5
-# Optional input and output paths:
-java -cp build Exercise5 Ex3StudentData.csv StudentData.csv
-```
-
-Loads the existing students using the same filename fallback as exercise 4,
-prompts for three more students, sorts by name A-Z ignoring case, then saves
-`StudentData.csv` and displays the sorted list. The first default run has six
-students. Later runs append three to the current `StudentData.csv`.
-
-## Exercise 6
-
-```powershell
-java -cp build Exercise6
-# Summary only, or an explicit input path:
-java -cp build Exercise6 --summary
-java -cp build Exercise6 data/CandidatePerformanceTest.csv --summary
-```
-
-Place the original CSV at `data/CandidatePerformanceTest.csv`, or provide its
-path on the command line. The supplied dataset stays local and is excluded
-from Git because it contains candidate records. The program reads
-and displays the candidate records, then reports total candidates and gender
-percentages; the count and gender breakdown for average scores **at least
-90**; counts for scores **at least 85** in each subject and in all three
-subjects together; and a count and gender breakdown for every group.
-
-Percentages use the population of the section being displayed (all candidates,
-the qualifying candidates, or one group), with two decimal places. Empty
-populations give 0.00%. The file's `Average` column supplies the average score.
-The title row is skipped, quoted multiline fields are supported, and malformed
-records are rejected with their CSV record number instead of silently skipped.
-
-## Exercise 7
-
-```powershell
-java -cp build Exercise7
-# Optional input, output directory, and concise display:
-java -cp build Exercise7 data/CandidatePerformanceTest.csv groups --summary
-```
-
-Reads and displays the candidate data, prints each group's gender statistics,
-and creates `groups/groupA.csv` through `groupD.csv`. Because the supplied
-dataset also has 135 candidates in group E, it creates `groupE.csv` as well.
-Every candidate is retained with all original columns. Each CSV ends with
-three labeled summary rows: total students, male percentage, and female
-percentage. Summary rows have the same column count as the data rows.
-Required groups A-D are exported even when empty, with 0.00% percentages.
-The output directory is excluded from Git to keep individual records local.
-
-## Bonus - object serialization and deserialization
-
-```powershell
-java -cp build BonusExercise
-# Optional source CSV and serialized output:
-java -cp build BonusExercise StudentData.csv BonusStudents.csv
-```
-
-Loads the team members as `Student` objects, serializes them to CSV, reads that
-CSV into new objects, displays them, and checks equality with the originals.
-The conversion preserves string IDs (including leading zeroes), Unicode,
-commas, quotes, and multiline fields. The handout's `.ser` hint demonstrates
-binary Java serialization; this solution implements the CSV format requested
-by the actual bonus question.
-
-## Report and recorded output
-
-The submission report is [`output/pdf/Lab4_Report.pdf`](output/pdf/Lab4_Report.pdf).
-It contains source and console screenshots for all seven exercises and the
-bonus, plus aggregate results and verification output. Screenshot images and
-the captured run text are under `output/report/`. No real candidate rows are
-included. Demonstration student details are fictional.
-
-The report can be rebuilt after compiling the Java programs and providing the
-local dataset. Report generation additionally requires Python's `reportlab`
-package, Node.js, Playwright, and Chromium (these are not Java dependencies):
+To rebuild the report, also install Python packages `reportlab` and `Pillow`,
+and use Node.js:
 
 ```powershell
 python scripts/capture_runs.py
-node scripts/capture_screenshots.cjs
-python scripts/build_report.py --date 2026-11-04
+node scripts/capture_codesnap.cjs
+python scripts/build_report.py
 ```
 
-If Playwright or Chromium is installed outside the usual locations, set
-`PLAYWRIGHT_MODULE` to the Playwright module path and `CHROME_PATH` to the
-browser executable. `capture_runs.py` accepts `--java` for a custom Java path.
-The integration tests also accept `--java` and `--dataset`.
+`capture_runs.py` accepts `--java`. Set `CODESNAP_EXTENSION_PATH` if the
+adapter is installed outside the standard VS Code extensions directory.
+`build_report.py` accepts `--student-name`, `--student-id`, and `--class-group`
+for a personal copy. The report evidence is stored once in `output/report/`.

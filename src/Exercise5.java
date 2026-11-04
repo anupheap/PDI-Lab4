@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Scanner;
 
-/** Adds three students, sorts the ArrayList by name, and saves StudentData.csv. */
 public class Exercise5 {
     public static void main(String[] args) throws IOException {
         Path input = args.length > 0 ? Path.of(args[0]) : StudentData.defaultInput();

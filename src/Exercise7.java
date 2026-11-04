@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-/** Exports every group with a header, original records, and three summary rows. */
 public class Exercise7 {
     public static void main(String[] args) throws IOException {
         Path input = args.length > 0 && !args[0].equals("--summary")
@@ -20,7 +19,6 @@ public class Exercise7 {
             data.display();
         }
         Map<String, ArrayList<Candidate>> groups = CandidateStatistics.byGroup(data.candidates());
-        // Always create the four files requested by the handout, even for empty groups.
         for (String group : List.of("A", "B", "C", "D")) {
             groups.computeIfAbsent(group, key -> new ArrayList<>());
         }

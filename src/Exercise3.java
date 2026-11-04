@@ -4,7 +4,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/** Prompts for three team members and saves their name, ID, and gender as CSV. */
 public class Exercise3 {
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in, StandardCharsets.UTF_8);

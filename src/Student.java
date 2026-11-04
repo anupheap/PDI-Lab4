@@ -1,6 +1,5 @@
 import java.util.List;
 
-/** IDs remain strings so leading zeroes survive CSV round trips. */
 public record Student(String name, String id, String gender) {
     public Student {
         if (name == null || id == null || gender == null

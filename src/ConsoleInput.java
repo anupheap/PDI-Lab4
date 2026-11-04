@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-/** Small shared helpers for interactive lab input. */
 public final class ConsoleInput {
     private ConsoleInput() { }
 
@@ -26,7 +25,6 @@ public final class ConsoleInput {
                     return value;
                 }
             } catch (NumberFormatException exception) {
-                // Ask again when the input is not an integer.
             }
             System.out.println("Please enter a positive integer.");
         }

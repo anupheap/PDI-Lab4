@@ -119,3 +119,18 @@ three labeled summary rows: total students, male percentage, and female
 percentage. Summary rows have the same column count as the data rows.
 Required groups A-D are exported even when empty, with 0.00% percentages.
 The output directory is excluded from Git to keep individual records local.
+
+## Bonus - object serialization and deserialization
+
+```powershell
+java -cp build BonusExercise
+# Optional source CSV and serialized output:
+java -cp build BonusExercise StudentData.csv BonusStudents.csv
+```
+
+Loads the team members as `Student` objects, serializes them to CSV, reads that
+CSV into new objects, displays them, and checks equality with the originals.
+The conversion preserves string IDs (including leading zeroes), Unicode,
+commas, quotes, and multiline fields. The handout's `.ser` hint demonstrates
+binary Java serialization; this solution implements the CSV format requested
+by the actual bonus question.

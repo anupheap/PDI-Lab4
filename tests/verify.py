@@ -166,3 +166,14 @@ with tempfile.TemporaryDirectory(prefix="pdi-lab4-", dir=ROOT / "tmp") as direct
     if dataset.exists():
         check_exports(dataset, candidates, "original-groups")
     print("PASS Exercise 7: all groups, lossless partition, rectangular CSV, footer statistics, empty groups")
+
+    output = run("BonusExercise", work)
+    assert "Serialized 6 Student objects to BonusStudents.csv" in output
+    assert "Round-trip verified:" in output
+    with (work / "BonusStudents.csv").open(encoding="utf-8", newline="") as stream:
+        assert list(csv.reader(stream)) == [["name", "ID", "gender"], *expected]
+    output = run("BonusExercise", work, "", str(multiline), str(work / "roundtrip.csv"))
+    with (work / "roundtrip.csv").open(encoding="utf-8", newline="") as stream:
+        assert list(csv.reader(stream)) == [["name", "ID", "gender"], ["Line\nBreak", "004", "female"]]
+    assert "Round-trip verified:" in output
+    print("PASS Bonus: object round trips preserve escaped fields, multiline names, and text IDs")
